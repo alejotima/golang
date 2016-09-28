@@ -1,0 +1,21 @@
+<div class="home-card-container">
+  <md-card>
+    <md-card-title>The CityLots spatial data layer is a representation of the City and County of San Francisco's Subdivision parcels</md-card-title>
+    <md-card-content>
+      <p> Add new CityLots.
+      </p>
+      <form (submit)="addName()" class="home-form">
+        <div>
+          <md-input [(ngModel)]="newName" name="newName" class="home-input" placeholder="Citylots" ngDefaultControl></md-input>
+          <button md-raised-button color="primary" type="submit" class="home-button">ADD</button>
+        </div>
+      </form>
+      <md-list class="home-list">
+        <md-list-item *ngFor="let obj of features">
+          <h3 md-line>{{obj.Kind}}</h3>
+          <p md-line class="demo-secondary-text">{{obj.Properties.Mapblklot}}</p>
+        </md-list-item>
+      </md-list>
+    </md-card-content>
+  </md-card>
+</div>
